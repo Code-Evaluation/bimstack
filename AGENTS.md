@@ -16,7 +16,7 @@ This file is the canonical roster. For the full definition of any agent, read th
 
 **Default deliverables:** research objectives, discussion guides, transcript analysis, research readouts, journey maps, service blueprints, ecosystem maps, problem statements, discovery reports.
 
-**Skills it calls into:** `bimstack:research-coach`, `bimstack:research-planning`, `bimstack:transcript-analysis`, `bimstack:research-presenting`, `bimstack:journey-map`, `bimstack:service-blueprint`, `bimstack:ecosystem-map`, `bimstack:experience-map`, `bimstack:workshop-facilitation`, `bimstack:discovery-kit` (extended by the Anthropic `design` and `service-design` plugins where installed).
+**Skills it calls into:** `bimstack:research-coach`, `bimstack:research-planning`, `bimstack:transcript-analysis`, `bimstack:research-presenting`, `bimstack:synthetic-research`, `bimstack:journey-map`, `bimstack:service-blueprint`, `bimstack:ecosystem-map`, `bimstack:experience-map`, `bimstack:workshop-facilitation`, `bimstack:discovery-kit` (extended by the Anthropic `design` and `service-design` plugins where installed).
 
 **Triggers:** discovery, user research, journey map, problem statement, ecosystem, blueprint, what user need does this serve, is this worth building.
 

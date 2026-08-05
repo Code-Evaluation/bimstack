@@ -90,6 +90,7 @@ bimstack/
 │   ├── experience-map/       the whole citizen goal, across services
 │   ├── workshop-facilitation/ co-creation sessions that produce artefacts
 │   ├── brief-to-prototypes/
+│   ├── synthetic-research/   synthetic personas + automated pre-flight
 │   ├── prototype-iteration/
 │   ├── build-for-production/
 │   └── show-the-thing/
