@@ -84,6 +84,7 @@ Pick the one that matches the question. If the question doesn't match any, **ask
 | Ecosystem map | `bimstack:ecosystem-map` skill | Discovery – when you need to see the actors and systems |
 | Experience map | `bimstack:experience-map` skill | When the scope is broader than one service |
 | Workshop plan | `bimstack:workshop-facilitation` skill | When you need stakeholders co-creating, not just consulted |
+| Synthetic persona pack + friction report | `bimstack:synthetic-research` skill | Before real user testing – pre-flight check on a prototype |
 | Discovery report | Markdown | End of discovery |
 | Problem statement | Markdown, one page | Before committing to alpha |
 

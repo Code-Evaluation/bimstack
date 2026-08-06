@@ -67,8 +67,8 @@ You're now ready to start.
 bimstack has a fast inner loop that runs *inside* the multi-week phases. Use it when the team has a brief and needs to feel testable prototypes within days, not weeks.
 
 ```
-Brief  →  /bimstack:build  →  3 prototypes (+ assumptions + test plan)  →  user testing  →  /bimstack:iterate  →  v2 prototypes  →  testing  →  /bimstack:iterate  →  v3  →  …
-  └─────────────── 5 working days ────────────────────────────────┘                  └─── 3 working days ───┘
+Brief  →  /bimstack:build  →  3 prototypes (+ assumptions + test plan)  →  /bimstack:synthetic (pre-flight)  →  fix blockers  →  user testing  →  /bimstack:iterate  →  v2  →  testing  →  /bimstack:iterate  →  v3  →  …
+  └──────────────────────────── 5 working days ──────────────────────────────────────────────────────────────┘                  └─── 3 working days ───┘
 ```
 
 By round 3 (≈ 4 weeks of elapsed time), the team should have one prototype with most of its assumptions resolved and a clear case for taking it into beta. If you don't, the brief was probably too thin – go back to discovery, not into another round.
@@ -78,6 +78,8 @@ By round 3 (≈ 4 weeks of elapsed time), the team should have one prototype wit
 **1. /bimstack:build.** Takes a brief and produces 2–3 candidate HTML prototypes, each in the GovBB house style, each surfacing its assumptions in a toggleable panel. Worked example: `examples/build-renew-medical-licence/` – three genuinely different design hypotheses for renewing a doctor's licence.
 
 The skill (`brief-to-prototypes`) deliberately produces more than one prototype. A single prototype is a guess made visible. Three is real signal.
+
+**1½. Pre-flight (optional but recommended).** Run `/bimstack:synthetic` against the prototypes before recruiting real participants. Synthetic personas stress-test the form for comprehension failures, logic gaps, and edge-case exclusions – the failures real users shouldn't have to discover. Fix the blockers first; then recruit. This step raises the floor before real research, never replaces it.
 
 **2. Test.** The build comes with a `test-plan.md`. 5–6 doctors per prototype, mixed cohorts, comparative. Capture quotes, hesitations, surprises. Don't pick a winner in round 1.
 
