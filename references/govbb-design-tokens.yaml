@@ -1,0 +1,305 @@
+last_verified: "2026-07-27"
+
+figma_files:
+  pattern_library:
+    name: "GOV.BB – Pattern Library"
+    key: "Rexszlh17fXo0XAxO75Mq5"
+    role: "Source of truth for all tokens and components"
+  alpha:
+    name: "GOV.BB – 01 – Alpha"
+    key: "QeR6m9iPDCBxDtqmLJKhdC"
+    role: "Live product file. Consumes the Pattern Library as a linked library"
+
+colour:
+  primitives:
+    collection: "Colour"
+    variable_count: 52
+    scale_convention: "10, 20, 40, 60, 80, 90 – lightest to darkest. Stop 40 is the anchor (brand colour). 60 and 90 are hover/pressed intensities, populated only where a real component needs them"
+    hues:
+      yellow: { stops: [10, 20, 40, 60, 80, 90] }
+      blue: { stops: [10, 20, 40, 60, 80, 90] }
+      green: { stops: [10, 20, 40, 60, 80, 90] }
+      pink: { stops: [10, 20, 40, 60, 80, 90] }
+      purple: { stops: [10, 20, 40, 60, 80, 90] }
+      red: { stops: [10, 20, 40, 60, 80, 90] }
+      teal: { stops: [10, 20, 40, 60, 80, 90] }
+      grey: { stops: [10, 20, 30, 40, 50, 60, 70, 80], note: "Full eight-stop scale, not the six-stop hue pattern" }
+      neutral: { stops: ["black-00", "white-00"], note: "Absolute endpoints, outside the ramp" }
+    known_values:
+      # Only stops directly referenced by a token or an accessibility note.
+      # Full 52-value table not yet captured here – read from Figma before relying on the rest.
+      teal-40: "#30c0c8"
+      teal-60: "#1a777d"
+      teal-80: "#0e5f64"
+      teal-90: "#0a4549"
+      red-40: "#ff6b6b"
+      red-60: "#bf3e3e"
+      red-80: "#a42c2c"
+      red-90: "#961e1f"
+      yellow-20: "#ffe9a8"
+      yellow-40: "#ffc726"
+      yellow-80: "#e8a833"
+      green-10: "#e9f9f3"
+      green-20: "#a5e5ce"
+      green-80: "#00654a"
+      blue-10: "#e5e9f2"
+      blue-40: "#00267f"
+      blue-80: "#00164a"
+      pink-10: "#fff4fb"
+      grey-10: "#f5f6f7"
+      grey-20: "#e0e4e9"
+      grey-30: "#d9d9d9"
+      grey-40: "#b9c0c6"
+      grey-50: "#9aa2a9"
+      grey-60: "#757e85"
+      grey-70: "#595959"
+      grey-80: "#3d3d3d"
+      black-00: "#000000"
+      white-00: "#ffffff"
+
+  semantic:
+    collection: "Tokens"
+    mode: "Light only – dark mode parked"
+    text:
+      text-primary: { resolves_to: "Neutral/black-00" }
+      text-secondary: { resolves_to: "Grey/grey-70" }
+      text-tertiary: { resolves_to: "Grey/grey-50", note: "User-set value. Do not change without confirming – this was a deliberate edit, not drift" }
+      text-inverse: { resolves_to: "Neutral/white-00" }
+      text-link: { resolves_to: "Teal/teal-80" }
+      text-link-hover: { resolves_to: "Teal/teal-60" }
+      text-disabled: { resolves_to: "Grey/grey-30" }
+      text-error: { resolves_to: "Red/red-60", note: "User-set value. Do not change without confirming – this was a deliberate edit, not drift" }
+      text-success: { resolves_to: "Green/green-60", note: "User-set value. Do not change without confirming – this was a deliberate edit, not drift" }
+    surface:
+      surface-primary: { resolves_to: "Neutral/white-00" }
+      surface-secondary: { resolves_to: "Grey/grey-10" }
+      surface-error: { resolves_to: "Red/red-10" }
+      surface-success: { resolves_to: "Green/green-10" }
+      icon-default: { resolves_to: "Grey/grey-20", note: "New token, created for icon-on-surface fills (e.g. the Select chevron) so they are decoupled from surface-secondary" }
+    border:
+      border-default: { resolves_to: "Grey/grey-60", note: "User-set value. Do not change without confirming – this was a deliberate edit, not drift" }
+      border-strong: { resolves_to: "Grey/grey-80", note: "User-set value. Do not change without confirming – this was a deliberate edit, not drift" }
+      border-error: { resolves_to: "Red/red-80" }
+      border-success: { resolves_to: "Green/green-80" }
+      border-disabled: { resolves_to: "Grey/grey-20" }
+    status:
+      status-alpha: { resolves_to: "Blue/blue-10" }
+      status-beta: { resolves_to: "Yellow/yellow-20" }
+      status-migrated: { resolves_to: "Pink/pink-10" }
+      status-issue: { resolves_to: "Red/red-10" }
+    focus:
+      focus-ring: { resolves_to: "Yellow/yellow-40", note: "Suspected error – see cross_check_findings CC-01. Code's --govbb-color-focus is teal" }
+      focus-ring-ink: { resolves_to: "Neutral/black-00" }
+      focus-ring-danger: { resolves_to: "Red/red-40" }
+      focus-ring-danger-ink: { resolves_to: "Neutral/black-00" }
+      link-focus-surface: { resolves_to: "Yellow/yellow-40" }
+      link-focus-ink: { resolves_to: "Neutral/black-00" }
+
+  component_tokens:
+    button:
+      count: 39
+      groups: ["Primary", "Negative", "Secondary", "Tertiary", "Text", "Text-Negative", "Alternate"]
+      note: "Focus state uses a drop-shadow ring baked into the component (teal-40), not bound to a variable"
+    link:
+      count: 12
+      groups: ["Light", "Dark"]
+    status_pill:
+      count: 11
+      groups: ["Received", "Under review", "Action needed", "Approved", "Not approved"]
+      note: "Created 2026-07-27 for the Status pill component. Shared pill-fill (white) plus per-status border and text tokens, each aliasing a primitive. Action needed text aliases black-00 (yellow border would fail as text). Built as a component-token group so the pill binds tokens, not primitives directly. Completed status dropped 2026-07-27 after flow review (conflated process stage with outcome)"
+    status_banner:
+      count: 10
+      groups: ["Received", "Under review", "Action needed", "Approved", "Not approved"]
+      note: "Created 2026-07-27 for the Status banner component. Per-status surface (tint) + border (accent), each aliasing a primitive. Left accent is an individual left stroke (6px, raw). The banner nests a Status pill instance. Completed dropped 2026-07-27 after flow review"
+    timeline:
+      count: 5
+      groups: ["marker-done", "marker-current", "connector", "marker-approved", "marker-error"]
+      note: "Created 2026-07-27 for the Activity step. marker-done aliases green-80 (dark, so the white tick meets non-text contrast, unlike the mock's bright green), marker-current aliases blue-40, connector aliases grey-20. marker-approved (green-80) and marker-error (red-80) added 2026-08-05 so a terminal step's current marker carries the outcome colour (green for Approved, red for Not approved) instead of the neutral blue; both the Dot fill and the ring stroke bind to them"
+
+accessibility_issues:
+  - id: "A1"
+    issue: "Focus ring contrast – teal"
+    detail: "#30c0c8, 2.21:1 on white, 1.42:1 on gold header. Needs 3:1 (WCAG 1.4.11)"
+    status: "Deferred – two-tone fix or darker ring pending design decision"
+  - id: "A2"
+    issue: "Focus ring contrast – danger"
+    detail: "#ff6b6b, 2.78:1 on white. Needs 3:1 (WCAG 1.4.11)"
+    status: "Deferred – same fix as A1"
+  - id: "A3"
+    issue: "Text button hover/active contrast"
+    detail: "Hover #ffc726 1.56:1, active #e8a833 2.08:1 on white. Needs 4.5:1 (WCAG 1.4.3)"
+    status: "Deferred – tracked in GitHub DS issue #149"
+  - id: "A4"
+    issue: "Forced colours (Windows High Contrast)"
+    detail: "Checkbox/radio checked marks, back-button arrow, select chevron can vanish"
+    status: "CSS fix only, outside the token system"
+
+typography:
+  collection: "Typography"
+  modes: ["Desktop", "Tablet", "Mobile"]
+  font: "Figtree"
+  roles:
+    Display: { weight: "Bold", desktop: [80, 80], tablet: [64, 64], mobile: [48, 48] }
+    H1: { weight: "SemiBold", desktop: [56, 64], tablet: [48, 56], mobile: [40, 48] }
+    H2: { weight: "SemiBold", desktop: [40, 48], tablet: [32, 40], mobile: [28, 36] }
+    H3: { weight: "SemiBold", desktop: [24, 32], tablet: [20, 32], mobile: [20, 24] }
+    H4: { weight: "SemiBold", desktop: [20, 32], tablet: [18, 28], mobile: [16, 20] }
+    Body-regular: { weight: "Regular", desktop: [20, 32], tablet: [20, 28], mobile: [16, 24] }
+    Body-small: { weight: "Regular", desktop: [16, 24], tablet: [16, 24], mobile: [14, 20] }
+    Caption: { weight: "Medium", desktop: [16, 24], tablet: [16, 24], mobile: [14, 20] }
+    Lead paragraph: { weight: "Regular", desktop: [24, 32], tablet: [24, 32], mobile: [20, 28], note: "Introductory paragraph summarising a page, at the top. Use once per page. Replaces Legacy/Large body" }
+  text_styles_confirmed:
+    - "Display"
+    - "H1"
+    - "H2"
+    - "H3"
+    - "H4"
+    - "Body-regular"
+    - "Body-small"
+    - "Caption"
+    - "Lead paragraph"
+    - "Legacy/Large body – do not use (superseded by Lead paragraph; remapped 2026-07-27, now 0 usages across Components/Patterns/Templates/Styles; retire the style pending an Alpha cross-file usage check)"
+    - "Legacy/Body – do not use"
+  wiring_status: "Body-regular text style applied via setTextStyleIdAsync (not a loose fontSize binding) on Button, Atom/Label, and Link. Lead paragraph text style created 2026-07-27 (24/24/20 px desktop/tablet/mobile), bound to new Typography variables, replacing Legacy/Large body. Heading/Text components not yet wired. Do not bind fontSize alone – always apply the real text style, since it bundles line-height correctly"
+
+spacing:
+  collection: "Space"
+  known_values:
+    xxs: 4
+    xs: 8
+    s: 16
+    xm: 24
+    m: 32
+    ml: 40
+    "48": 48
+    l: 64
+    xl: 128
+  known_gaps: "Naming convention strained: xm (24), ml (40) and 48 all sit awkwardly in the t-shirt scale. ml (40) added for page gutters, 48 added for tablet margins (named numerically to avoid an ml/lm clash). Recommend migrating the crammed mid-scale stops to a numeric form (space-40, space-48). No 96 stop"
+  wiring_status: "Corner radius (4px) bound to Space/xxs on Atom/Input and Button. Button padding bound to Space/xm (left/right) and Space/s (top/bottom). 8px vertical gaps bound to Space/xs on Form/Component/Input, Atom/Label, Form/Component/Date, Input/Select. Radio's circular radius (40px) intentionally left unbound – it is a fully-rounded shape convention, not a linear spacing value"
+
+scope_guard:
+  tokenised:
+    - component: "Button"
+      variants: 30
+      note: "6 kinds x 4 states"
+    - component: "Link (Link styles)"
+      variants: 10
+      note: "2 contexts x 5 states"
+    - component: "Atom/Radio"
+      variants: 7
+      note: "Fill, border, and selected-fill all bound"
+    - component: "Form/Radio"
+      variants: 7
+      note: "Composed wrapper nesting Atom/Radio. 7 = Unselected x Default/Hover/Focus/Error plus Selected x Default/Hover/Focus. Colour and spacing tokenised; selected fill reuses Button/Primary/button-primary-fill. Typography migrated to the Body-regular text style (2026-07-27)"
+    - component: "Atom/Checkbox"
+      variants: 7
+      note: "Fill, border, and selected-fill all bound"
+    - component: "Checkbox"
+      variants: 7
+      note: "Composed wrapper (live name Checkbox) nesting Atom/Checkbox. 7 = Unselected x Default/Hover/Focus/Error plus Selected x Default/Hover/Focus. Colour and spacing tokenised; selected fill reuses Button/Primary/button-primary-fill. Typography migrated to the Body-regular text style (2026-07-27)"
+    - component: "Atom/Input"
+      variants: 12
+      note: "6 states x 2 types (Single line, Multi-line). No placeholder text by design – only Typing and Done states show text, top-aligned"
+    - component: "Atom/Select"
+      variants: 4
+      note: "Rebuilt to nest a matching Atom/Input instance side-by-side with a fixed 62x62 Arrow, auto-layout, right-edge radius 0"
+    - component: "Atom/Label"
+      variants: 2
+      note: "Label type=Default, Label type=Error. Three-tier text: Label, Description, Error message"
+    - component: "Input/Select"
+      variants: 4
+      note: "Nests Atom/Label + Atom/Select, Error variant swaps to Label type=Error"
+    - component: "Form/Component/Input"
+      variants: 12
+      note: "Nests Atom/Label + Atom/Input, full state cascade"
+    - component: "Input/Date"
+      variants: 2
+      note: "Live file name is Input/Date (was Form/Component/Date). Nests 3x Form/Component/Input (day/month/year), single combined error message at the wrapper level, not one per field"
+    - component: "File"
+      variants: 2
+      note: "Uploaded (bound to Blue/blue-10 directly, by design), Error (Surface/surface-error)"
+    - component: "File upload"
+      variants: 6
+      note: "Live file name is File upload (was Form/Component/File upload). Default/border-default, Uploaded/border-strong, Error/border-error. Label rebuilt using Atom/Label (Upload a file / Attach a .pdf, .docx, or .png file) rather than raw text"
+    - component: "Status pill"
+      variants: 5
+      note: "Built 2026-07-27 (node 7881:156). Status = Received/Under review/Action needed/Approved/Not approved/Completed. Bound to the Status pill/* component-token group (not primitives). Capsule radius and 1.5px stroke are raw (no token). First component of the application-tracking pattern; net-new, pending design-system adoption decision"
+    - component: "Status banner"
+      variants: 5
+      note: "Built 2026-07-27 (node 7892:168). Left-accent card + tint per status; nests a Status pill instance, H4 heading, Body-regular body, Body-small date. Bound to Status banner/* tokens. Part of the net-new application-tracking pattern"
+    - component: "Activity step"
+      variants: 2
+      note: "Rebuilt 2026-07-27 (node 7922:256; supersedes 7898:175, to delete). State = Done (green-80 tick) / Current (blue-40 ring + dot). Named structure: Marker rail (Marker + Connector) beside Step content (Label row + Description). Connector uses layoutAlign STRETCH + layoutGrow so it reaches the next marker. Bound to Timeline/* + text tokens"
+    - component: "Contact panel"
+      variants: 1
+      note: "Built 2026-07-27 (node 7900:166). surface-secondary card, H4 heading, Department/Phone/Email rows, muted note. Reuses existing semantic tokens only (no new token group). Part of the application-tracking pattern"
+  exists_not_tokenised:
+    - "Header"
+    - "Footer"
+    - "Payment"
+    - "ShowHide"
+    - "Table (is a plain FRAME, not a real component)"
+  no_confirmed_figma_presence:
+    - "Breadcrumbs"
+    - "ErrorMessage"
+    - "FooterLink"
+    - "FormGroup"
+    - "Hint"
+    - "LinkButton"
+    - "SkipLink"
+    - "Textarea (superseded – Atom/Input's Multi-line type variant covers this)"
+    - "SummaryList"
+    - "Heading/Text as discrete components"
+  no_token_missing_entirely:
+    - "Character count"
+    - "Password input"
+
+cross_check_findings:
+  source: "packages/frontend/src/tokens.css, read directly from the govbb-design-system repo"
+  findings:
+    - id: "CC-01"
+      type: "suspected_error"
+      detail: "--govbb-color-focus is teal (#30c0c8) in code. Figma's Focus/focus-ring points to Yellow/yellow-40. These should be the same general keyboard focus ring and are not. Focus/link-focus-surface (yellow) is correctly mapped separately – it is focus-ring specifically that looks wrong"
+      status: "Not yet corrected. Flag before building on it"
+    - id: "CC-02"
+      type: "never_applied_fix"
+      detail: "The on-dark Link hover colour meant to be corrected to teal-80 during the Link merge is still live in code as --govbb-teal-ink (#083a3d), now formalised as its own primitive"
+      status: "Flag for correction. Not an intentional distinct colour"
+    - id: "CC-03"
+      type: "naming_only"
+      detail: "CSS primitives are still on the old 00/10/40/100 scale. Value mapping to the new 10/20/40/60/80/90 scale is one-to-one by hex, e.g. teal-00 (code) = teal-80 (Figma)"
+      status: "No action needed beyond awareness"
+    - id: "CC-04"
+      type: "real_conflict"
+      detail: "Disabled opacity is 40% in CSS (--govbb-opacity-disabled) and 25% in the recorded Figma Button decision"
+      status: "Needs a person to confirm which is correct"
+
+published_library_notes:
+  source: "Found while composing pages from the published library. Traps for anyone locating components by name"
+  notes:
+    - "Two published components share the name 'Status banner': the phase banner (Alpha/Beta/Migrated/Service issue) and the application status banner (Received/In progress/Approved/Rejected). A name search returns either; locate by key and confirm with a node read"
+    - "'Header-test' is still published alongside the real Global / Header. Treat as a stale test publish; candidate for unpublishing"
+    - "No standalone 'Ask Assistant' component is published; the assistant entry point exists only inside the Header. Do not search for one"
+    - id: "CC-05"
+      type: "gap"
+      detail: "--govbb-color-highlight (blue-10, selected surfaces) has no Figma semantic token equivalent"
+      status: "Gap, not yet scoped"
+
+external_ecosystem:
+  - name: "Barbados Digital Toolkit"
+    url: "barbados-digital-toolkit.alpha.gov.bb"
+    status: "confirmed_live"
+  - name: "Writing content for Barbadians"
+    url: "barbados-digital-toolkit.alpha.gov.bb/design-and-build/writing-content-for-barbadians.html"
+    status: "confirmed_live"
+    note: "Overlaps but is not identical to house-style.md's word-swap list. Check both for citizen-facing copy work"
+  - name: "Design System Storybook"
+    url: "govtech-bb.github.io/design-system"
+    status: "confirmed_live_but_stale"
+    note: "Sits at the pre-rename repo name. govbb-design-system is current"
+  - name: "Shared Google Doc on content rules"
+    status: "access_blocked"
+    note: "Returned 401. Ask for comment access or a direct export if revisited"
+  - name: "Four govtech-barbados-* skills claimed by house-style.md"
+    status: "unconfirmed"
+    note: "services, forms, presentations, qr-codes. None exist in bimstack v0.2.0. Same open question as the content-rules source"
