@@ -298,6 +298,8 @@ Brief → /bimstack:build → 3 testable HTML prototypes → user testing → /b
 /bimstack:build renewing a fishing licence in Barbados
 ```
 
+**Step 1½ – Pre-flight (optional but recommended).** Before recruiting real participants, run `/bimstack:synthetic` against the prototypes. It generates synthetic personas grounded in population data and walks them through the form, surfacing comprehension failures, logic gaps, and edge-case exclusions. Fix the blockers it finds before real testing – it raises the floor, never replaces real research.
+
 **Step 2 – Test.** Run the test plan with 5–6 citizens per prototype, mixed across cohorts. Capture quotes, hesitations, surprises. Don't pick a winner in round 1.
 
 **Step 3 – Iterate.** Feed the feedback to `/bimstack:iterate`. You can pass:

@@ -79,7 +79,7 @@ This file explains what each verb means in practice, who leads it, and what good
 - Security testing including a pen test before public beta, and at least annually thereafter
 - Bugs and friction are filed in the open
 
-**Skills:** `design:accessibility-review`, `design:design-critique`.
+**Skills:** `bimstack:synthetic-research`, `design:accessibility-review`, `design:design-critique`.
 
 **Cost of skipping:** the citizen tests it in production, and Standard 5 fails.
 

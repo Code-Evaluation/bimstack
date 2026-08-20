@@ -75,10 +75,15 @@ You iterate. Small, frequent content changes drive most of the post-launch impro
 | Accessibility audit | `design:accessibility-review` skill | Before showing any prototype to a user, and before every beta release |
 | Developer handoff spec | `design:design-handoff` skill | When the developer needs production-ready details |
 | Design system contribution | `design:design-system` skill | When you've found a pattern the design system should adopt |
+| Component or token spec | `bimstack:component-spec` skill | When you need to know exactly what a Pattern Library component or token contains – anatomy, states, and the tokens each part is bound to – before you build or review against it |
+| Figma-versus-code drift report | `bimstack:token-cross-check` skill | When you need to know whether the Figma tokens and the front-end CSS agree, before building or generating from either |
+| Page or flow composed in Figma | `bimstack:page-composition` skill | When you need to assemble a page, a service flow, or a service-page draft from linked design system components, in the right IA order |
+| Triaged design review | `bimstack:design-review` skill | When you need a design checked against the Barbados Digital Service Standards and WCAG 2.1 AA, returned as Fix now / Fix later / Confirm with MDA |
+| New component built from tokens | `bimstack:component-build` skill | When a component is confirmed missing and needs building in Figma from the design system's tokens. It proposes a plan and waits for sign-off before writing |
 | Clickable prototype | `anthropic-skills:govtech-barbados-services` or `:govtech-barbados-forms` | When the deliverable is a working alpha.gov.bb prototype |
 | Content style guide | Markdown | When the service has more than a handful of pages |
 
-For colour, type and spacing decisions, defer to the design system. For new visual choices not yet in the system, use `frontend-design:colour-and-typography`.
+For colour, type and spacing decisions, defer to the design system. To read exactly what the design system contains – a component's tokens and states, or the token layers themselves – use the `bimstack:component-spec` skill rather than guessing. For new visual choices not yet in the system, use `frontend-design:colour-and-typography`.
 
 ---
 
