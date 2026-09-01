@@ -6,6 +6,7 @@ bimstack is how the GovTech Barbados team builds digital services with Claude. F
 
 It's a process, not a collection of tools. It bakes in the way GovTech Barbados builds services so that a team can pick it up on day one and ship work that already conforms to the standards.
 
+
 ## Who this is for
 
 - **Civil servants** building digital services for Barbados
